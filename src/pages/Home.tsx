@@ -16,8 +16,8 @@ const Home = () => {
     <section className="home">
       <div className="container home__container">
         <p>{count}</p>
-        <button onClick={() => increaseCount(1000)}>INCREASE COUNT</button>
-        <button onClick={() => decreaseCount(1000)}>INCREASE COUNT</button>
+        <button onClick={() => increaseCount(1)}>INCREASE COUNT</button>
+        <button onClick={() => decreaseCount(1)}>INCREASE COUNT</button>
         <button onClick={() => resetCount()}>INCREASE COUNT</button>
       </div>
     </section>
