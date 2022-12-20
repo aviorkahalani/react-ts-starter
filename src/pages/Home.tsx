@@ -1,29 +1,24 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { increaseCount, decreaseCount, resetCount } from '../store/actions/countAction'
-import { RootState } from '../store/reducers'
 import { countActionCreators } from '../store'
-import { CountAction } from '../store/types/countActions'
+import { RootState } from '../store/reducers'
 
 const Home = () => {
-  const dispatch = useDispatch()
   const { count } = useSelector((state: RootState) => state.count)
-  console.log(count)
+  const dispatch = useDispatch()
 
   const { increaseCount, decreaseCount, resetCount } = bindActionCreators(
     countActionCreators,
     dispatch
   )
 
-  const onIncreaseCount = () => {
-    dispatch(increaseCount(1))
-  }
-
   return (
     <section className="home">
       <div className="container home__container">
-        <pre>{count}</pre>
-        <button onClick={onIncreaseCount}>INCREASE COUNT</button>
+        <p>{count}</p>
+        <button onClick={() => increaseCount(1000)}>INCREASE COUNT</button>
+        <button onClick={() => decreaseCount(1000)}>INCREASE COUNT</button>
+        <button onClick={() => resetCount()}>INCREASE COUNT</button>
       </div>
     </section>
   )
