@@ -1,0 +1,72 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'sm': 767px,
+  'md': 992px,
+  'lg': 1200px,
+  'xl': 1400px,
+) !default;
+
+@mixin at-media($breakpoint) {
+  @if map-has-key($map: $breakpoints, $key: $breakpoint) {
+    @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Warning: `#{$breakpoint}` is not a valid breakpoint name.";
+  }
+}
+
+@mixin font($ff: 'LatoRegular') {
+  font-family: $ff, sans-serif;
+}
+
+@mixin text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+@mixin text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+@mixin text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@mixin text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@mixin text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@mixin text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@mixin text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@mixin text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+@mixin text-5xl {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+@mixin text-6xl {
+  font-size: 3.75rem;
+  line-height: 3.75rem;
+}

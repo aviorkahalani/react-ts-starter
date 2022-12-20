@@ -1,0 +1,45 @@
+@use '../abstracts' as a;
+@use '../layout' as l;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  @include a.text-sm;
+
+  @include a.at-media('sm') {
+    @include a.text-base;
+  }
+}
+
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &.active {
+    color: a.$green-500;
+  }
+}
+
+input {
+  border: none;
+  outline: none;
+}

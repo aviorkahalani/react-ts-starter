@@ -1,0 +1,47 @@
+@use 'sass:map';
+@use '../abstracts' as a;
+
+@mixin grid($tc: 12, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($tc, 1fr);
+  gap: $gap;
+}
+
+.container {
+  grid-column: span 12;
+  padding: 0.5rem;
+
+  @include a.at-media('sm') {
+    grid-column: 2 / span 10;
+  }
+
+  @include a.at-media('md') {
+    grid-column: 3 / span 8;
+  }
+}
+
+.row {
+  @include grid($gap: 0);
+}
+
+$col-colors: (
+  '1': #ffcbcb,
+  '2': #fff2cd,
+  '3': #ddfbc7,
+  '4': #bcf9d9,
+  '5': #f4b0c6,
+  '6': #f2d252,
+  '7': #e5b5f4,
+  '8': #f4b0c6,
+  '9': #c0f6fa,
+  '10': #5ce3ab,
+  '11': #53a0e8,
+  '12': #b764f7,
+);
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: span $i;
+    background-color: map.get($col-colors, #{$i});
+  }
+}

@@ -1,0 +1,5 @@
+@use '../layout' as l;
+
+.explore {
+  @include l.grid;
+}

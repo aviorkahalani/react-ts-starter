@@ -1,0 +1,7 @@
+@use '../layout' as l;
+
+.loader {
+  @include l.grid;
+  grid-template-rows: 100px;
+  margin: 0 auto;
+}

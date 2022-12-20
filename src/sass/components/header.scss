@@ -1,0 +1,20 @@
+@use '../layout' as l;
+@use '../abstracts/' as a;
+
+.header {
+  @include l.grid;
+  border-bottom: 2px solid a.$gray-100;
+
+  &__container {
+    @include l.flex($jc: space-between);
+  }
+
+  &__logo {
+    @include a.font('PlayfairSemibold');
+    @include a.text-2xl;
+  }
+
+  &__nav {
+    @include l.flex($gap: 1rem);
+  }
+}

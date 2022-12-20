@@ -1,0 +1,18 @@
+@use '../abstracts' as a;
+@use '../layout' as l;
+
+.footer {
+  @include l.grid;
+  background: a.$gray-50;
+  border-top: 2px solid a.$gray-100;
+  color: a.$gray-400;
+
+  &__container {
+    @include a.text-sm;
+    @include l.flex($direction: column-reverse, $jc: center);
+
+    @include a.at-media('md') {
+      @include l.flex($jc: space-between);
+    }
+  }
+}
