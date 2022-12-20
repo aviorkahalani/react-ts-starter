@@ -15,10 +15,18 @@ const Home: React.FC = () => {
   return (
     <section className="home">
       <div className="container home__container">
-        <p>{count}</p>
-        <button onClick={() => increaseCount(1)}>INCREASE COUNT</button>
-        <button onClick={() => decreaseCount(1)}>INCREASE COUNT</button>
-        <button onClick={() => resetCount()}>INCREASE COUNT</button>
+        <h1>{count}</h1>
+        <div className="row">
+          <button className="col-4 btn" onClick={() => increaseCount(1)}>
+            Increase count
+          </button>
+          <button className="col-4 btn" onClick={() => decreaseCount(1)}>
+            Decrease count
+          </button>
+          <button className="col-4 btn" onClick={() => resetCount()}>
+            Reset count
+          </button>
+        </div>
       </div>
     </section>
   )
