@@ -11,7 +11,7 @@
     @include a.text-sm;
     @include l.flex($direction: column-reverse, $jc: center);
 
-    @include a.at-media('md') {
+    @include a.at-media('sm') {
       @include l.flex($jc: space-between);
     }
   }

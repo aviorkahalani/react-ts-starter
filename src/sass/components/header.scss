@@ -4,6 +4,7 @@
 .header {
   @include l.grid;
   border-bottom: 2px solid a.$gray-100;
+  background-color: a.$gray-100;
 
   &__container {
     @include l.flex($jc: space-between);
@@ -14,7 +15,57 @@
     @include a.text-2xl;
   }
 
-  &__nav {
+  .nav {
     @include l.flex($gap: 1rem);
+
+    &__menu__btn {
+      cursor: pointer;
+    }
+
+    &__links {
+      position: absolute;
+      opacity: 0;
+      top: -100%;
+      left: -100%;
+      transition: opacity cubic-bezier(0, 0.52, 1, 1) 0.3s;
+    }
+
+    &__links.open {
+      @include a.text-2xl;
+      opacity: 0.9;
+      display: grid;
+      gap: 1rem;
+      place-content: center;
+      background: a.$gray-600;
+      color: a.$white;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30vh;
+
+      .btn__close {
+        cursor: pointer;
+        position: absolute;
+        top: 0.9rem;
+        right: 0.5rem;
+      }
+    }
+
+    @include a.at-media('sm') {
+      &__menu__btn {
+        display: none;
+      }
+
+      &__links {
+        @include l.flex($gap: 1rem);
+        position: unset;
+        opacity: 1;
+
+        .btn__close {
+          display: none;
+        }
+      }
+    }
   }
 }

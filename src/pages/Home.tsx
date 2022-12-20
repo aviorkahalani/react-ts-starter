@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { countActionCreators } from '../store'
 import { RootState } from '../store/reducers'
 
-const Home = () => {
+const Home: React.FC = () => {
   const { count } = useSelector((state: RootState) => state.count)
   const dispatch = useDispatch()
 

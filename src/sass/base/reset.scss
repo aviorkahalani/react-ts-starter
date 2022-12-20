@@ -13,7 +13,7 @@ html {
   @include a.text-sm;
 
   @include a.at-media('sm') {
-    @include a.text-base;
+    @include a.text-lg;
   }
 }
 
@@ -34,8 +34,10 @@ a {
   color: inherit;
   text-decoration: none;
 
-  &.active {
-    color: a.$green-500;
+  @include a.at-media('sm') {
+    &.active {
+      color: a.$green-500;
+    }
   }
 }
 

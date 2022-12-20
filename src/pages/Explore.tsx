@@ -1,4 +1,4 @@
-const Explore = () => {
+const Explore: React.FC = () => {
   return (
     <section className="explore">
       <div className="container explore__container">
