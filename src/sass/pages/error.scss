@@ -1,0 +1,63 @@
+@use '../abstracts' as a;
+@use '../layout' as l;
+
+.error {
+  @include l.grid;
+
+  min-height: 100vh;
+  place-content: center;
+
+  &__container {
+    @include l.flex($direction: column-reverse, $jc: flex-start);
+
+    .img,
+    .info {
+      flex: 1;
+    }
+
+    .info {
+      @include a.font('LatoBold');
+      @include l.flex($direction: column, $ai: flex-start, $gap: 1rem);
+      @include a.font('LatoRegular');
+
+      h1 {
+        @include a.font('PlayfairRegular');
+        @include a.text-6xl;
+        color: a.$gray-600;
+      }
+
+      p {
+        &:first-of-type {
+          @include a.font('LatoBold');
+          @include a.text-xl;
+          text-transform: uppercase;
+        }
+
+        &:last-of-type {
+          @include a.text-xs;
+          color: a.$gray-500;
+        }
+      }
+
+      a {
+        @include l.flex($gap: 0.5rem);
+        @include a.font('LatoBold');
+
+        border-radius: 0.3rem;
+        color: a.$gray-600;
+        border: 1px solid a.$gray-100;
+        padding: 0.5rem 1rem;
+        text-transform: uppercase;
+        transition: background 0.1s ease-in;
+
+        &:hover {
+          background: a.$gray-100;
+        }
+      }
+    }
+
+    @include a.at-media('sm') {
+      @include l.flex($direction: row);
+    }
+  }
+}

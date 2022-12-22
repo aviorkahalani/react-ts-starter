@@ -5,6 +5,7 @@ import App from '../App'
 const Home = React.lazy(() => import('../pages/Home'))
 const Explore = React.lazy(() => import('../pages/Explore'))
 const About = React.lazy(() => import('../pages/About'))
+const Error = React.lazy(() => import('../pages/ErrorPage'))
 
 export const router = createBrowserRouter([
   {
@@ -24,5 +25,6 @@ export const router = createBrowserRouter([
         element: <About />,
       },
     ],
+    errorElement: <Error />,
   },
 ])
