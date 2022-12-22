@@ -1,0 +1,30 @@
+@use '../abstracts' as a;
+@use '../layout' as l;
+
+.auth {
+  @include l.grid;
+
+  &__form {
+    @include l.flex($direction: column, $ai: flex-start, $gap: 0.2rem);
+    div {
+      @include l.flex($direction: column, $ai: flex-start, $gap: 0.2rem);
+
+      label {
+        @include a.font('LatoBold');
+      }
+
+      input {
+        @include a.font('LatoRegular');
+
+        border: 2px solid a.$gray-200;
+        padding: 0.5rem 1rem;
+        border-radius: 0.3rem;
+        transition: background 0.2s ease-in;
+
+        &:focus {
+          border-color: a.$gray-400;
+        }
+      }
+    }
+  }
+}

@@ -15,6 +15,7 @@ const NavLinks: React.FC<IProps> = ({ isOpen, toggleMenu }) => {
       <NavLink to={'/'}>Home</NavLink>
       <NavLink to={'/explore'}>Explore</NavLink>
       <NavLink to={'/about'}>About</NavLink>
+      <NavLink to={'/auth'}>Login</NavLink>
     </div>
   )
 }

@@ -45,3 +45,29 @@ input {
   border: none;
   outline: none;
 }
+
+button.btn {
+  @include l.flex($gap: 0.5rem);
+  @include a.font('RobotoBold');
+
+  cursor: pointer;
+  border-radius: 0.3rem;
+  color: a.$gray-600;
+  border: 1px solid a.$gray-100;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: background 0.1s ease-in;
+  background: a.$gray-100;
+
+  &.btn--submit {
+    background: a.$blue-100;
+    border: 1px solid a.$blue-100;
+
+    &:hover {
+      background: a.$blue-200;
+    }
+  }
+  &:hover {
+    background: a.$gray-200;
+  }
+}

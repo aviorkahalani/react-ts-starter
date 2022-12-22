@@ -1,10 +1,10 @@
 import { Dispatch } from 'redux'
-import { ActionType, CountAction } from '../types/countActions'
+import { CountActionType, CountAction } from '../types/countActions'
 
 export const increaseCount = (amount: number) => {
   return async (dispatch: Dispatch<CountAction>) => {
     dispatch({
-      type: ActionType.INCREASE,
+      type: CountActionType.INCREASE,
       payload: amount,
     })
   }
@@ -13,7 +13,7 @@ export const increaseCount = (amount: number) => {
 export const decreaseCount = (amount: number) => {
   return async (dispatch: Dispatch<CountAction>) => {
     dispatch({
-      type: ActionType.DECREASE,
+      type: CountActionType.DECREASE,
       payload: amount,
     })
   }
@@ -22,7 +22,7 @@ export const decreaseCount = (amount: number) => {
 export const resetCount = () => {
   return async (dispatch: Dispatch<CountAction>) => {
     dispatch({
-      type: ActionType.RESET,
+      type: CountActionType.RESET,
     })
   }
 }

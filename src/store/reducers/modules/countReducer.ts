@@ -1,4 +1,4 @@
-import { ActionType, CountAction } from '../../types/countActions'
+import { CountActionType, CountAction } from '../../types/countActions'
 
 type State = {
   count: number
@@ -10,12 +10,15 @@ const INITIAL_STATE = {
 
 export const countReducer = (state: State = INITIAL_STATE, action: CountAction): State => {
   switch (action.type) {
-    case ActionType.INCREASE:
+    case CountActionType.INCREASE:
       return { ...state, count: state.count + action.payload }
-    case ActionType.DECREASE:
+
+    case CountActionType.DECREASE:
       return { ...state, count: state.count - action.payload }
-    case ActionType.RESET:
+
+    case CountActionType.RESET:
       return { ...state, count: 0 }
+
     default:
       return state
   }

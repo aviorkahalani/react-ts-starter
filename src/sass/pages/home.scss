@@ -3,8 +3,4 @@
 
 .home {
   @include l.grid;
-
-  .btn {
-    @include a.btn(#3742fa, #ffffff);
-  }
 }
