@@ -12,10 +12,18 @@ const NavLinks: React.FC<IProps> = ({ isOpen, toggleMenu }) => {
   return (
     <div className={styledClass}>
       <AiOutlineClose size={20} className="btn__close" onClick={() => toggleMenu(false)} />
-      <NavLink to={'/'}>Home</NavLink>
-      <NavLink to={'/explore'}>Explore</NavLink>
-      <NavLink to={'/about'}>About</NavLink>
-      <NavLink to={'/auth'}>Login</NavLink>
+      <NavLink onClick={() => toggleMenu(false)} to={'/'}>
+        Home
+      </NavLink>
+      <NavLink onClick={() => toggleMenu(false)} to={'/explore'}>
+        Explore
+      </NavLink>
+      <NavLink onClick={() => toggleMenu(false)} to={'/about'}>
+        About
+      </NavLink>
+      <NavLink onClick={() => toggleMenu(false)} to={'/auth'}>
+        Login
+      </NavLink>
     </div>
   )
 }

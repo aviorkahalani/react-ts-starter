@@ -4,11 +4,11 @@ type State = {
   user: User | null
 }
 
-const INITIAL_STATE = {
+const INITIAL_STATE: State = {
   user: null,
 }
 
-export const authReducer = (state: State = INITIAL_STATE, action: AuthAction): State => {
+export const authReducer = (state = INITIAL_STATE, action: AuthAction): State => {
   switch (action.type) {
     case AuthActionType.LOGIN:
       return { ...state, user: action.payload }

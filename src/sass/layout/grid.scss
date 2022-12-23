@@ -9,7 +9,7 @@
 
 .container {
   grid-column: span 12;
-  padding: 0.5rem;
+  padding: 1rem;
 
   @include a.at-media('sm') {
     grid-column: 2 / span 10;

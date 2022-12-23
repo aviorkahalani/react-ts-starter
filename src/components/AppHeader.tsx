@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import NavLinks from './NavLinks'
 
 const AppHeader: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  let location = useLocation()
 
   const toggleMenu = (state: boolean) => {
     setIsOpen(state)
   }
-
-  useEffect(() => {
-    toggleMenu(false)
-  }, [location])
 
   return (
     <header className="header">
